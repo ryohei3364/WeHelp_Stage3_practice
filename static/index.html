@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圖文留言板</title>
+    <!-- <link rel="stylesheet" href="/static/styles/index.css"> -->
+    <style>
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+      }
+      .divider {
+        width: 100%;
+        border-bottom: 1px solid grey;
+        margin: 20px 0 20px 0;
+      }
+      div {
+        margin: 5px 0;
+      }
+      .update--content {
+        display: flex;
+        flex-direction: column;
+      }
+      img {
+        max-width: 300px;
+      }
+    </style> 
+    <script src="static/index.js" defer></script>
+</head>
+<body>
+    <h3>發表一篇圖文</h3>
+    <div>文字內容
+      <input type="text" id="input--text" placeholder="請說明圖片內容">
+    </div>
+    <div>圖片檔案
+      <button id="upload--button">上傳</button>
+      <input type="file" id="input--file" accept="image/*" style="display: none;">
+      <span id="file--result">請選擇檔案</span>
+    </div>
+    <button id="submit--button">送出</button>
+    <div class="divider"></div>
+
+    <div id="show--content">
+      <!-- <div id="show--list"></div> -->
+      <!-- <span id="show--text">測試看看這個</span>
+      <div id="show--image">
+        <img src="/static/images/logo.png" alt="上傳圖片">
+      </div> -->
+    </div>
+</body>
+</html>
