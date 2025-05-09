@@ -12,9 +12,11 @@ AWS_S3_BUCKET = os.getenv("AWS_S3_BUCKET")
 async def get_data_from_s3(file: UploadFile = File(...)): 
   if not file or file.filename == "":
     return JSONResponse(content={"error": "No file uploaded"}, status_code=400)
-  url = upload_to_s3(file)
-  if url:
-    return {"url": url}
+  original_url = upload_to_s3(file)
+  new_url = original_url.replace("booktrend-images.s3.amazonaws.com", "d2lmlyo01d222h.cloudfront.net")
+  print(new_url)
+  if new_url:
+    return {"url": new_url}
   return JSONResponse(content={"error": "Failed to upload to S3"}, status_code=500)
 
 @post_router.post("/api/submit")
