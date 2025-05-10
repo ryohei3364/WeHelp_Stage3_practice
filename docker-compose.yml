@@ -1,0 +1,20 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - AWS_S3_KEY=${AWS_S3_KEY}
+      - AWS_S3_SECRET=${AWS_S3_SECRET}
+      - AWS_S3_BUCKET=${AWS_S3_BUCKET}
+      - AWS_RDS_USER=${AWS_RDS_USER}
+      - AWS_RDS_PW=${AWS_RDS_PW}
+      - AWS_RDS_HOST=${AWS_RDS_HOST}
+      - AWS_RDS_DB=${AWS_RDS_DB}
+      - AWS_RDS_PORT=${AWS_RDS_PORT}
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
