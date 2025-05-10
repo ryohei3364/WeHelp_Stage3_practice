@@ -16,7 +16,7 @@ def upload_to_s3(file_obj, bucket_name=AWS_S3_BUCKET, object_name=None):
     object_name = f"uploads/{uuid.uuid4()}_{file_obj.filename}"
   try:
     s3.upload_fileobj(file_obj.file, bucket_name, object_name)
-    url = f"https://{bucket_name}.s3.amazonaws.com/{object_name}"
+    url = f"https://d2lmlyo01d222h.cloudfront.net/{object_name}"
     return url
   except ClientError as e:
     print("Upload failed:", e)
